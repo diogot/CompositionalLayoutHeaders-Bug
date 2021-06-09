@@ -143,16 +143,16 @@ final class CommonCell: UICollectionViewCell {
         backgroundColor = .green
         image.backgroundColor = .blue
         image.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(image)
+        contentView.addSubview(image)
         image.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: topAnchor),
-            image.leadingAnchor.constraint(equalTo: leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: trailingAnchor),
+            image.topAnchor.constraint(equalTo: contentView.topAnchor),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             image.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 9 / 16),
-            image.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
+            image.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor),
             label.centerYAnchor.constraint(equalTo: image.centerYAnchor),
             label.centerXAnchor.constraint(equalTo: image.centerXAnchor),
         ])
